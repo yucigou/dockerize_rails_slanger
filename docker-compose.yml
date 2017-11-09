@@ -8,6 +8,16 @@ services:
   redis:
     image: redis:4.0-alpine
 
+  slanger:
+    image: antillion/slanger:0.6.0
+    depends_on:
+      - redis
+    ports:
+      - "4657:4657"
+      - "8080:8080"
+    env_file:
+      - .env.slanger
+
   web:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
@@ -18,5 +28,6 @@ services:
     depends_on:
       - db
       - redis
+      - slanger
     env_file:
       - .env
