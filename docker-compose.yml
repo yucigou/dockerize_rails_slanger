@@ -9,7 +9,9 @@ services:
     image: redis:4.0-alpine
 
   slanger:
-    image: antillion/slanger:0.6.0
+    build:
+      context: .
+      dockerfile: Dockerfile-slanger
     depends_on:
       - redis
     ports:
