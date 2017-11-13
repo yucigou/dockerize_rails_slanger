@@ -28,7 +28,6 @@ services:
       - "3000:3000"
     depends_on:
       - db
-      - redis
       - slanger
     env_file:
       - .env
