@@ -14,5 +14,8 @@ module HelloSlanger
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # https://stackoverflow.com/questions/29417328/how-to-disable-cannot-render-console-from-on-rails
+    config.web_console.whitelisted_ips = '172.19.0.1'
   end
 end

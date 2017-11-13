@@ -15,7 +15,7 @@ services:
     depends_on:
       - redis
     ports:
-      - "4657:4657"
+      - "4567:4567"
       - "8080:8080"
     env_file:
       - .env.slanger
